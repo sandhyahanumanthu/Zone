@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #F8F2F5;
+  background-image:
+    radial-gradient(
+      ellipse at 15% 10%,
+      rgba(241, 217, 229, 0.45) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 85% 60%,
+      rgba(245, 237, 242, 0.6) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(232, 221, 229, 0.35) 0%,
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #F8F2F5 0%,
+      #FAF4F8 50%,
+      #F8F2F5 100%
+    );
+  background-attachment: fixed;
+  color: #29212F;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dropzone-bg {
+  background-color: #F8F2F5;
+  background-image:
+    radial-gradient(
+      ellipse at 15% 10%,
+      rgba(241, 217, 229, 0.45) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 85% 60%,
+      rgba(245, 237, 242, 0.6) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(232, 221, 229, 0.35) 0%,
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #F8F2F5 0%,
+      #FAF4F8 50%,
+      #F8F2F5 100%
+    );
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, .brand-font {
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F2F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8DDE5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D96C9D;
+}
+
+/* Plum Rose Card & Panel Classes */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #E8DDE5;
+  box-shadow: 0 10px 30px -5px rgba(41, 33, 47, 0.07), 0 2px 6px -2px rgba(41, 33, 47, 0.04);
+}
+
+.glass-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8DDE5;
+  box-shadow: 0 4px 20px -2px rgba(41, 33, 47, 0.05), 0 1px 3px 0 rgba(41, 33, 47, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: #D96C9D;
+  box-shadow: 0 12px 28px -6px rgba(41, 33, 47, 0.09), 0 4px 10px -2px rgba(217, 108, 157, 0.12);
+  transform: translateY(-2px);
+}
+
+.glass-pill {
+  background-color: #FFFFFF;
+  border: 1px solid #E8DDE5;
+  box-shadow: 0 1px 2px 0 rgba(41, 33, 47, 0.04);
+}
+
+/* Brand Gradient Text */
+.aurora-gradient-text,
+.brand-gradient-text {
+  background: linear-gradient(135deg, #29212F 0%, #6D5278 45%, #D96C9D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text,
+.rose-gradient-text {
+  background: linear-gradient(135deg, #D96C9D 0%, #C75689 50%, #862D57 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Film Grain Noise Texture */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+}
+
+/* Cinematic Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 28s linear infinite;
+}
+
+/* Reduced Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+  .animate-aurora-1,
+  .animate-aurora-2,
+  .animate-aurora-3,
+  .animate-float-slow,
+  .animate-pulse-slow,
+  .animate-fade-in,
+  .animate-spin-slow {
+    animation: none !important;
+    transition: none !important;
+  }
+}
